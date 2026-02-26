@@ -10,6 +10,10 @@ const GoogleLogin = () => {
     console.log("Password:", password);
   };
 
+  //google login handling
+  const googleLogin = () => {}
+
+
   return (
     <div style={styles.container}>
       <form style={styles.card} onSubmit={handleSubmit}>
@@ -36,6 +40,8 @@ const GoogleLogin = () => {
         <button type="submit" style={styles.button}>
           Login
         </button>
+
+        <button onClick={googleLogin}>Login With Google</button>
       </form>
     </div>
   );
