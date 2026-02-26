@@ -1,0 +1,70 @@
+# ======================
+# GLOBAL
+# ======================
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.env
+.env.*
+*.pem
+
+# ======================
+# NODE / BACKEND
+# ======================
+backend/node_modules/
+backend/dist/
+backend/build/
+backend/.env
+backend/.env.*
+backend/logs/
+backend/uploads/
+backend/tmp/
+
+# ======================
+# FRONTEND (Vite/React)
+# ======================
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.*
+frontend/.vite/
+frontend/.cache/
+
+# ======================
+# PYTHON / ML
+# ======================
+ml-engine/venv/
+ml-engine/__pycache__/
+ml-engine/*.pkl
+ml-engine/models/*.pkl
+ml-engine/data/*.csv
+ml-engine/data/*.json
+ml-engine/notebooks/.ipynb_checkpoints/
+
+# ======================
+# DATABASE
+# ======================
+data/
+dump/
+backup/
+
+# ======================
+# IDE / EDITORS
+# ======================
+.vscode/
+.idea/
+*.swp
+
+# ======================
+# TEST / COVERAGE
+# ======================
+coverage/
+reports/
+
+# ======================
+# TEMP FILES
+# ======================
+tmp/
+.cache/
