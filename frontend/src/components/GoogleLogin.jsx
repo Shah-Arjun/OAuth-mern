@@ -16,7 +16,7 @@ const GoogleLogin = () => {
     try {
       // if auth code from google cloud
       if(authResult['code']){
-        
+        console.log(authResult)
       }
     } catch (err) {
       console.log("Error while requesting google auth-code", err)
