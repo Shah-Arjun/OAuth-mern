@@ -1,3 +1,5 @@
+const { googleLogin } = require('../controllers/authController')
+
 const router = require('express').Router()
 
 router.get('/test', (req, res)=>{
@@ -6,5 +8,5 @@ router.get('/test', (req, res)=>{
 
 
 //for google login
-
+router.post('/google', googleLogin)
 module.exports = router
