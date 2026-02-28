@@ -6,15 +6,6 @@ import { useNavigate } from 'react-router-dom';
 const GoogleLogin = () => {
   const navigate = useNavigate()
 
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log("Email:", email);
-  //   console.log("Password:", password);
-  // };
-
   // function that handle onSuccess, onError
   const responseGoogle = async (authResult) => {
     try {
@@ -51,57 +42,56 @@ const GoogleLogin = () => {
 
   return (
     <>
-    <div className="App" style={{display:'flex', justifyItems:'center', alignItems:'center'}}>
-      <button onClick={googleLogin}>Login With Google</button>
-    </div>
-    </>
+  <div
+    className="App"
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      width: "100vw",
+      background: "#f5f7fa",
+    }}
+  >
+    <button
+      onClick={googleLogin}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "12px",
+        padding: "12px 22px",
+        backgroundColor: "#ffffff",
+        color: "#3c4043",
+        border: "1px solid #dadce0",
+        borderRadius: "4px",
+        fontSize: "14px",
+        fontWeight: "500",
+        fontFamily: "Arial, sans-serif",
+        cursor: "pointer",
+        boxShadow: "0 1px 2px rgba(60,64,67,0.15)",
+        transition: "all 0.2s ease-in-out",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = "0 2px 6px rgba(60,64,67,0.25)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = "0 1px 2px rgba(60,64,67,0.15)";
+      }}
+    >
+      <img
+        src="https://developers.google.com/identity/images/g-logo.png"
+        alt="Google"
+        style={{
+          width: "18px",
+          height: "18px",
+        }}
+      />
+      <span>Sign in with Google</span>
+    </button>
+  </div>
+</>
   );
 };
 
-// const styles = {
-//   container: {
-//     width: "100vw",        
-//     height: "100vh",         
-//     display: "flex",
-//     justifyContent: "center",
-//     alignItems: "center",
-//     backgroundColor: "#f0f4f8",
-//   },
-//   card: {
-//     width: "100%",            
-//     maxWidth: "400px",        
-//     padding: "40px 30px",
-//     borderRadius: "12px",
-//     backgroundColor: "#fff",
-//     boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-//     display: "flex",
-//     flexDirection: "column",
-//     gap: "15px",
-//   },
-//   title: {
-//     textAlign: "center",
-//     fontSize: "24px",
-//     fontWeight: "bold",
-//     color: "#1f2937",
-//   },
-//   input: {
-//     padding: "12px",
-//     borderRadius: "6px",
-//     border: "1px solid #ccc",
-//     outline: "none",
-//     fontSize: "14px",
-//   },
-//   button: {
-//     marginTop: "10px",
-//     padding: "12px",
-//     border: "none",
-//     borderRadius: "6px",
-//     backgroundColor: "#4f46e5",
-//     color: "#fff",
-//     fontWeight: "bold",
-//     fontSize: "16px",
-//     cursor: "pointer",
-//   },
-// };
 
 export default GoogleLogin;
