@@ -19,6 +19,8 @@ const Dashboard = () => {
     navigate('/login')
   }
 
+
+
   return (
     <>
     <div
@@ -37,7 +39,7 @@ const Dashboard = () => {
       <h3>{userInfo?.userEmail}</h3>
 
       <img
-        src={userInfo?.images}
+        src={userInfo?.image}
         alt="user image"
         style={{
           width: "120px",

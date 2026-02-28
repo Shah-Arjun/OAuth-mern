@@ -26,7 +26,7 @@ const googleLogin = async (req, res) => {
     // id user not exist in db then create the user data in db --> (if new user)
     if(!user){
       user = await UserModel.create({
-        userName:name,
+        userName:name, 
         userEmail: email,
         image: picture
       })

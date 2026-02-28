@@ -50,7 +50,7 @@ const GoogleLogin = () => {
       alignItems: "center",
       height: "100vh",
       width: "100vw",
-      background: "#f5f7fa",
+      background: "#000",
     }}
   >
     <button
