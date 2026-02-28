@@ -1,8 +1,11 @@
 // import React, { useState } from "react"
 import {useGoogleLogin} from '@react-oauth/google'
 import { googleAuth } from '../api/api';
+import { useNavigate } from 'react-router-dom';
 
 const GoogleLogin = () => {
+  const navigate = useNavigate()
+
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
 
@@ -21,8 +24,16 @@ const GoogleLogin = () => {
 
         const result = await googleAuth(authResult['code'])   //hit the api passing the code
 
-        console.log("Response from backend: ", result)
-        // const {email, user, image} = result.data.user
+        console.log("Response from backend: ", result.data.user)
+        const {userEmail, userName, image} = result.data.user
+
+        const token = result.data.token
+        const userObj = { userEmail, userName, image, token}
+
+        localStorage.setItem('user-info', JSON.stringify(userObj))
+
+        // navigate to dashboard after successful authentication
+        navigate('/dashboard')
       }
     } catch (err) {
       console.log("Error while requesting google auth-code", err)
@@ -39,9 +50,11 @@ const GoogleLogin = () => {
 
 
   return (
-    <div className="App">
+    <>
+    <div className="App" style={{display:'flex', justifyItems:'center', alignItems:'center'}}>
       <button onClick={googleLogin}>Login With Google</button>
     </div>
+    </>
   );
 };
 
