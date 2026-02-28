@@ -8,5 +8,7 @@ router.get('/test', (req, res)=>{
 
 
 //for google login
-router.post('/google', googleLogin)
+router.get('/google', googleLogin)
+
+
 module.exports = router

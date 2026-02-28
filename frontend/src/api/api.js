@@ -1,7 +1,9 @@
-import axios from 'axios'
+import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'http://localhost:3000'
-})
+  baseURL: "http://localhost:8080", // backend url
+});
 
-export const googleAuth = (code) => api.get(`/google?code=${code}`);
+export const googleAuth = (code) => {
+  return api.get(`/auth/google?code=${code}`);
+};

@@ -1,5 +1,6 @@
 // import React, { useState } from "react"
 import {useGoogleLogin} from '@react-oauth/google'
+import { googleAuth } from '../api/api';
 
 const GoogleLogin = () => {
   // const [email, setEmail] = useState("");
@@ -12,11 +13,16 @@ const GoogleLogin = () => {
   // };
 
   // function that handle onSuccess, onError
-  const responseGoogle = (authResult) => {
+  const responseGoogle = async (authResult) => {
     try {
       // if auth code from google cloud
       if(authResult['code']){
-        console.log(authResult)
+        //console.log("auth code==== ", authResult['code'])
+
+        const result = await googleAuth(authResult['code'])   //hit the api passing the code
+
+        console.log("Response from backend: ", result)
+        // const {email, user, image} = result.data.user
       }
     } catch (err) {
       console.log("Error while requesting google auth-code", err)
